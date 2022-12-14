@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        
+        
+        .sidebar {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidebar a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: #111;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+        }
+        
+        .openbtn:hover {
+          background-color: #444;
+        }
+        
+        #main {
+          transition: margin-left .5s;
+          padding: 20px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+          .sidebar {padding-top: 15px;}
+          .sidebar a {font-size: 18px;}
+        }
+        .data{
+            padding: 10px;
+            margin: 12px;
+            font-size: 25px;
+            font-size: large;
+            
+        }
+      
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  margin:20px;
+  font-family: "Lato", sans-serif;
+          
+          background-size: cover;
+          font-size: large;
+  
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(163, 212, 179);
+  color:black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(163, 212, 179);
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: rgb(3, 3, 3);
+  padding: 16px;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  background-color:rgb(163, 212, 179);
+  height: 250px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 16px;
+  display:block;
+  text-align:left;
+}
+
+.column a:hover {
+  background-color: rgb(254, 254, 254);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+button{
+  background-color: #111;
+  color: white;
+  width: 100px;
+  height:30px;
+  
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    height: auto;
+  }
+}
+.new{
+  background-image: url("hackintro.jpg");
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  height: 500px;
+  background-color: #AA9183;
+}
+.data{
+  background-color: #BA9785;
+  padding: 0%;
+  margin: 0%;
+}
+.introtopic{
+  background-color: #C4AA94;
+  padding:0%;
+  margin: 0%;
+}
+        </style>
+</head>
+<body>
+  
+  <div class="navbar">
+    <a href="newindex.html">Home</a>
+    <a href="attacks.html">Attacks</a>
+    <a href="awareness.html">Cyber Awareness</a>
+    <div class="dropdown">
+      <button class="dropbtn">Pentesting
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <div class="header">
+          <h2>Pentesting Tools</h2>
+        </div>   
+        <div class="row">
+          <div class="column">
+              <h3>Most used tools</h3>
+              <a href="nmap.html">Nmap</a>
+              <a href="#">Bettercap</a>
+              <a href="wireshark.html">Wireshark</a>
+            </div>
+          <div class="column">
+            <h3>Information Gathering</h3>
+            <a href="nmap.html">Nmap</a>
+            <a href="zenmap.html">Zenmap</a>
+            <a href="wireshark.html">Wireshark</a>
+          </div>
+          <div class="column">
+            <h3>Sniffing and Spoofing</h3>
+            <a href="#">Bettercap</a>
+            <a href="#">Colasoft</a>
+            <a href="#">Mitm Proxy</a>
+          </div>
+          <div class="column">
+            <h3>Password attacks</h3>
+            <a href="#">Hash cat</a>
+            <a href="#">John the ripper</a>
+            <a href="#">Hydra</a>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <a href="login.html">Sign in/Login</a>
+    <a href="contact.html">Contact Us</a>
+  
+  </div>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+        <a href="attacks.html">Attacks</a>
+        <a href="awareness.html">Awareness</a>
+        <a href="index.html">Pentesting Tools</a>
+        <a href="login.html">Sign in/Log in</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      
+     
+      
+      <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+      <section class="new">  </section>
+      <div class="data">
+      <h1 align="center">All about Pentesting tools and Cyber Security</h1>
+      
+
+        <p>Professional penetration testers, or pen testers, are akin to “white hat” or ethical hackers, adversaries with an explicit authorization to attack a network. During this simulation of real-world conditions, they put an IT system to the test to identify vulnerabilities.</p>
+        <p>The goal is to patch these vulnerabilities to prevent cybercriminals from exploiting them. Such security audits require various techniques and tools to simulate classic steps of an attack, such as information gathering (reconnaissance), phishing, or privilege escalation.</p>
+        <p>Within the vast ecosystem of cybersecurity solutions, many beginners and professionals alike choose to use open-source solutions, such as Metasploit, Nmap, and Wireshark, over premium products. We’ve reviewed those better known open source names in our main pentesting tools article. Here we’re focusing on some lesser-known but still worthy open-source solutions that can be used separately for specific purposes or combined to run comprehensive penetration tests. 
+            </p> </div>
+      </div>
+      <div class="introtopic">
+      <img src="cybersecurity.webp"  width="600px" style="position:relative; left:400px;" >      
+    </div>
+   
+    
+      <h2  align="center"> Do you think you're cyber secure?</h2>
+      <p>Well it's never enough when it comes to cyber security. Though there are some ways that can make you more safe than you already are. Follow these steps to stay more Cyber secure.
+        <ol>
+          <li>Think twice before clicking on links or opening attachments.</li>
+          <br>
+          <li>Verify requests for private information.</li>
+          <br>
+          <li>Protect your passwords.</li>
+          <br>
+          <li>Protect your stuff!</li>
+          <br>
+          <li>Keep your devices, browsers, and apps up to date.</li>
+          <br>
+          <li>Back up critical files.</li>
+          <br>
+          <li>Delete sensitive information when it's no longer needed.</li>
+          <br>
+          <li> If it's suspicious, report it!</li>
+        </ol> <button><a href="awareness.html"><b>Click</b></a></button> <b>here to get more cyber aware</b>
+      </p>
+
+        <h2>Take the quiz below to check how cyber secure you are!!</h2>
+        <button class="button" >TEST</button>
+        <br>
+        <form align="center" class="form">
+          <h1 style="color: rgb(19, 18, 18);">Want to buy our e-book? Fill the form below.</h1>
+           <label for="name" style="color: rgb(35, 33, 33);">Name </label>
+             <input type="name" name="use_name" id="user_name">
+             <br>
+             <br>
+             <label for="user_email" style="color: rgb(18, 17, 17);">Email   </label>
+             <input type="email" name="use_pass" id="user_email">
+             <br>
+             <br>
+             <label for="user_password" style="color: rgb(24, 22, 22);">Password </label>
+             <input type="password" name="use_pass" id="user_password">
+             <br>
+             <br>
+             <button>Submit</button>
+              </form>
+              <br>
+        <div class="faq"> <h1>FAQ's </h1>
+          <h2>What is Penetration Testing?</h2>
+          <p>Penetration testing is a security exercise where security experts search your systems for vulnerabilities using the processes a hacker would. And then attempt to exploit some of those vulnerabilities in order to find out their severity, and the risk they pose to the organization. Learn about the pentest tools that you should try!</p>
+          <h2>Which are the Best Penetration Testing Tools?</h2>
+          <p>Some of the best penetration testing tools are Astra’s Pentest, Metasploit, NMap, Burp Suite, and Nessus.</p>
+
+</body>
+</html>

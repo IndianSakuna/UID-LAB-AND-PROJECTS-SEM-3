@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nmap</title>
+    <style>
+        body{
+            padding: 20px;
+            margin: 20px;
+        }
+        .sub .command{
+            background-color: rgb(175, 173, 176);
+            width: 400px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head" align="center"> <h1>Nmap(Network exploration tool and security / port scanner)</h1></div>
+    <div class="sub"> <h1> What is Nmap </h1></div>
+    <div class="matter"><p>Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts.</p>
+    <p>The output from Nmap is a list of scanned targets, with supplemental information on each depending on the options used. Key among that information is the “interesting ports table”. That table lists the port number and protocol, service name, and state. The state is either
+        <ul>
+            <li>Open</li>
+            <li>Filtered</li>
+            <li>Unfiltered</li>
+            <li>Closed</li>
+        </ul> Open means that an application on the target machine is listening for connections/packets on that port. Filtered means that a firewall, filter, or other network obstacle is blocking the port so that Nmap cannot tell whether it is open or closed. Closed ports have no application listening on them, though they could open up at any time. Ports are classified as unfiltered when they are responsive to Nmap's probes, but Nmap cannot determine whether they are open or closed. </p>
+    <p>The port table may also include software version details when version detection has been requested.</p></div>
+    <div class="example"><img src="nmap1.png" >    </div>
+
+    <div class="sub"><h1>Nmap Scans</h1></div>
+    <div class="sub"><h2>TCP SCAN</h2></div>
+    <div class="matter"><p>A TCP scan is generally used to check and complete a three-way handshake between you and a chosen target system. A TCP scan is generally very noisy and can be detected with almost little to no effort. This is “noisy” because the services can log the sender IP address and might trigger Intrusion Detection Systems.</p></div>
+    <div class="sub"><h2>UDP SCAN</h2></div>
+    <div class="matter"><p>UDP scans are used to check whether there is any UDP port up and listening for incoming requests on the target machine. Unlike TCP, UDP has no mechanism to respond with a positive acknowledgment, so there is always a chance for a false positive in the scan results. However, UDP scans are used to reveal Trojan horses that might be running on UDP ports or even reveal hidden RPC services.</p></div>
+    <div class="sub"><h2>SYN SCAN</h2></div>
+    <div class="matter"><p>This is another form of TCP scan. The difference is unlike a normal TCP scan, nmap itself crafts a syn packet, which is the first packet that is sent to establish a TCP connection. What is important to note here is that the connection is never formed, rather the responses to these specially crafted packets are analyzed by Nmap to produce scan results.</p></div>
+    <div class="sub"><h2>ACK SCAN</h2></div>
+    <div class="matter"><p>ACK scans are used to determine whether a particular port is filtered or not. This proves to be extremely helpful when trying to probe for firewalls and their existing set of rules. Simple packet filtering will allow established connections (packets with the ACK bit set), whereas a more sophisticated stateful firewall might not.</p></div>
+    <div class="sub"><h1>Nmap Commands</h1>
+    <p>Let's look at some Nmap commands.</p>
+    <h1>Basic scans</h1>
+    <p>Scanning the list of active devices on a network is the first step in network mapping. There are two types of scans you can use for that:
+<ul>
+    <li><h2>Ping scan</h2>Scans the list of devices up and running on a given subnet.</li>
+    <div class="command"><p>>nmap -sp 192.168.1.1/24</p></div>
+
+    <li><h2>Scan a single hos
+        
+    </h2>Scans the list of devices up and running on a given subnet.</li>
+    <div class="command"><p>>nmap scanme.nmap.org</p></div>
+</ul>
+<img src="nmap3.png">
+    </p></div>
+
+<div class="sub"> <h1>Stealth scan</h1>
+    <p>Stealth scanning is performed by sending an SYN packet and analyzing the response. If SYN/ACK is received, it means the port is open, and you can open a TCP connection.</p>
+    <p>However, a stealth scan never completes the 3-way handshake, which makes it hard for the target to determine the scanning system.</p>
+    <div class="command"><p>> nmap -sS scanme.nmap.org</p></div>
+    <p>You can use the ‘-sS’ command to perform a stealth scan. Remember, stealth scanning is slower and not as aggressive as the other types of scanning, so you might have to wait a while to get a response.</p>
+</div>
+<div class="sub"> <h1>Version scanning</h1><p>Finding application versions is a crucial part in penetration testing.</p>
+    <p>It makes your life easier since you can find an existing vulnerability from the Common Vulnerabilities and Exploits (CVE) database for a particular version of the service. You can then use it to attack a machine using an exploitation tool like Metasploit.</p>
+    <div class="command"><p>> nmap -sV scanme.nmap.org</p></div>
+    <p>To do a version scan, use the ‘-sV’ command. Nmap will provide a list of services with its versions. Do keep in mind that version scans are not always 100% accurate. </p>
+    <img src="nmap4.png">
+</div>
+<div class="sub">
+    <h1>OS Scanning</h1>
+    <p>In addition to the services and their versions, Nmap can provide information about the underlying operating system using TCP/IP fingerprinting. Nmap will also try to find the system uptime during an OS scan.</p>
+    <div class="command"><p>> nmap -sV scanme.nmap.org</p></div>
+    <p>Again, OS detection is not always accurate, but it goes a long way towards helping a pen tester get closer to their target.</p>
+    <img src="nmap5.png">
+</div>
+<div class="sub">
+    <h1>Aggressive Scanning</h1><p>Nmap has an aggressive mode that enables OS detection, version detection, script scanning, and traceroute. You can use the -A argument to perform an aggressive scan.</p>
+<div class="command"><p>> nmap -A scanme.nmap.org</p></div>
+<p>Aggressive scans provide far better information than regular scans. However, an aggressive scan also sends out more probes, and it is more likely to be detected during security audits.</p>
+<img src="nmap6.png">
+</div>
+<div class="sub">
+    <h1>Scanning Multiple Hosts
+        
+    </h1><p>Nmap has the capability of scanning multiple hosts simultaneously. This feature comes in real handy when you are managing vast network infrastructure.</p>
+<p>You can scan multiple hosts through numerous approaches:</p>
+<ul><li>Write all the IP addresses in a single row to scan all of the hosts at the same time.</li>
+<div class="command"><p>> nmap 192.164.1.1 192.164.0.2 192.164.0.2</p></div>
+<li>Use the asterisk (*) to scan all of the subnets at once.</li>
+<div class="command"><p>> nmap 192.164.1.*</p></div>
+<li>Add commas to separate the addresses endings instead of typing the entire domains.</li>
+<div class="command"><p>> nmap 192.164.0.1,2,3,4</p></div>
+<li>Use a hyphen to specify a range of IP addresses</li>
+<div class="command"><p>> nmap 192.164.0.0–255</p></div>
+</ul></div>
+<div class="sub">
+    <h1>Port Scanning</h1><p>
+        Port scanning is one of the most fundamental features of Nmap. You can scan for ports in several ways.  
+    </p>
+    <ul>
+        <li>
+            Using the -p param to scan for a single port
+        </li>
+        <div class="command"><p>> nmap -p 973 192.164.0.1</p></div>
+        <li>If you specify the type of port, you can scan for information about a particular type of connection, for example for a TCP connection.</li>
+        <div class="command"><p>> nmap -p T:7777, 973 192.164.0.1</p></div>
+        <li>A range of ports can be scanned by separating them with a hyphen.</li>
+        <div class="command"><p>> nmap -p 76–973 192.164.0.1 </p></div>
+        <li>You can also use the -top-ports flag to specify the top n ports to scan.</li>
+        <div class="command"><p>> nmap --top-ports 10 scanme.nmap.org </p></div>
+    </ul>
+</div>
+<div class="sub">
+    <h1>Verbosity and Exporting Scan Results</h1><p>
+        Penetration testing can last days or even weeks. Exporting Nmap results can be useful to avoid redundant work and to help with creating final reports. Let’s look at some ways to export Nmap scan results.
+    </p>
+<h1>Verbose Output</h1>
+<div class="command"><p>> nmap -v scanme.nmap.org</p></div><p>The verbose output provides additional information about the scan being performed. It is useful to monitor step by step actions Nmap performs on a network, especially if you are an outsider scanning a client’s network.</p>
+<img src="nmap7.png">
+</div>
+<div class="sub">
+    <h1>Normal output</h1><p>Nmap scans can also be exported to a text file. It will be slightly different from the original command line output, but it will capture all the essential scan results.</p>
+    <div class="command"><p>> nmap -oN output.txt scanme.nmap.org</p></div>
+    <img src="nmap8.png">
+</div>
+<div class="sub">
+    <h1>XML output</h1><p>Nmap scans can also be exported to XML. It is also the preferred file format of most pen-testing tools, making it easily parsable when importing scan results.</p>
+    <div class="command"><p>> nmap -oX output.xml scanme.nmap.org</p></div>
+<img src="nmap9.png"></div>
+</body>
+</html>

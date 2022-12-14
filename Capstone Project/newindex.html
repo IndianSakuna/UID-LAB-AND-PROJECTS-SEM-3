@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cyber Security Camp</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+.sidebar {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidebar a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: #111;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+        }
+        
+        .openbtn:hover {
+          background-color: #444;
+        }
+        
+        #main {
+          transition: margin-left .5s;
+          padding: 20px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+          .sidebar {padding-top: 15px;}
+          .sidebar a {font-size: 18px;}
+        }
+        .data{
+            padding: 10px;
+            margin: 12px;
+            font-size: 25px;
+            font-size: large;
+            
+        }
+      
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  margin:20px;
+  font-family: "Lato", sans-serif;
+          
+          background-size: cover;
+          font-size: large;
+  
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(163, 212, 179);
+  color:black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(163, 212, 179);
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: rgb(3, 3, 3);
+  padding: 16px;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  background-color:rgb(163, 212, 179);
+  height: 250px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 16px;
+  display:block;
+  text-align:left;
+}
+
+.column a:hover {
+  background-color: rgb(254, 254, 254);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+button{
+  background-color: #111;
+  color: white;
+  width: 100px;
+  height:30px;
+  
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    height: auto;
+  }
+}
+.new{
+  background-image: url("hackintro.jpg");
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  height: 500px;
+  background-color: #AA9183;
+}
+.data{
+  background-color: #BA9785;
+  padding: 0%;
+  margin: 0%;
+}
+.introtopic{
+  background-color: #C4AA94;
+  padding:0%;
+  margin: 0%;
+}
+</style>
+</head>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="navbar">
+    <a href="newindex.html">Home</a>
+    <a href="attacks.html">Attacks</a>
+    <a href="awareness.html">Cyber Awareness</a>
+    <div class="dropdown">
+      <button class="dropbtn">Pentesting
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <div class="header">
+          <h2>Pentesting Tools</h2>
+        </div>   
+        <div class="row">
+          <div class="column">
+              <h3>Most used tools</h3>
+              <a href="nmap.html">Nmap</a>
+              <a href="#">Bettercap</a>
+              <a href="wireshark.html">Wireshark</a>
+            </div>
+          <div class="column">
+            <h3>Information Gathering</h3>
+            <a href="nmap.html">Nmap</a>
+            <a href="zenmap.html">Zenmap</a>
+            <a href="wireshark.html">Wireshark</a>
+          </div>
+          <div class="column">
+            <h3>Sniffing and Spoofing</h3>
+            <a href="#">Bettercap</a>
+            <a href="#">Colasoft</a>
+            <a href="#">Mitm Proxy</a>
+          </div>
+          <div class="column">
+            <h3>Password attacks</h3>
+            <a href="#">Hash cat</a>
+            <a href="#">John the ripper</a>
+            <a href="#">Hydra</a>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <a href="https://thehackernews.com/2022/10/indian-energy-company-tata-powers-it.html">Cyber News</a>
+    <a href="login.html">Sign in/Login</a>
+    <a href="contact.html">Contact Us</a>
+  
+  </div>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+        <a href="attacks.html">Attacks</a>
+        <a href="awareness.html">Awareness</a>
+        <a href="index.html">Pentesting Tools</a>
+        <a href="login.html">Sign in/Log in</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      
+    
+      
+      <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+<!-- Content -->
+<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+  <div class="w3-panel">
+    <h1><b>BlueHawk</b></h1>
+    
+  </div>
+
+  <!-- Slideshow -->
+  <div class="w3-container">
+    <div class="w3-display-container mySlides">
+      <img src="hackintro.jpg" style="width:100%">
+      <div class="w3-display-topleft w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Cyber Security Tools</span>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="typesofatttack.webp" style="width:100%">
+      <div class="w3-display-middle w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Types of Cyber attacks</span>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="cyberawarness.webp" style="width:100%">
+      <div class="w3-display-topright w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Cyber Awareness</span>
+      </div>
+    </div>
+
+    <!-- Slideshow next/previous buttons -->
+    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+    
+      <div class="w3-center">
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Grid -->
+  <div class="w3-row w3-container">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What you will learn</span>
+    </div>
+    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
+      <h3>Cyber Attacks</h3>
+      <p>A cyber attack is an assault launched by cybercriminals using one or more computers against a single or multiple computers or networks.</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
+      <h3>Cyber Awareness</h3>
+      <p>The level of awareness and understanding end users have about cybersecurity and threats that their network face everyday.</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
+      <h3>Cyber News</h3>
+      <p> Check out top news about cyber  security, malware attacks and more on our website. Know everything about Cyber world.</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
+      <h3>Cyber Tools</h3>
+      <p> Learn more about different types of cyber security tools and how to use them to their fullest. Also know about different cyber tools uses.</p>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="w3-row-padding" id="plans">
+    <div class="w3-center w3-padding-64">
+      <h3>Types of Tools</h3>
+      <p>Select a tool and get started learning</p>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Information Gathering</li>
+        <li class="w3-padding-16"><b>Nmap</b></li>
+        <li class="w3-padding-16"><b>Zenmap</b> </li>
+        <li class="w3-padding-16"><b>Wireshark</b></li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-green w3-padding-large"><a href="nmap.html">view</a></button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Sniffing and spoofing</li>
+        <li class="w3-padding-16"><b>Colasoft</b> </li>
+        <li class="w3-padding-16"><b>Bettercap</b> </li>
+        <li class="w3-padding-16"><b>Mitm Proxy</b> </li>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-green w3-padding-large"><a href="nmap.html">view</a></button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Password attacking</li>
+        <li class="w3-padding-16"><b>Hash Cat</b></li>
+        <li class="w3-padding-16"><b>John the Ripper</b> </li>
+        <li class="w3-padding-16"><b>Hydra</b> </li>
+    
+        
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-green w3-padding-large"><a href="nmap.html">view</a></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="w3-row-padding" id="about">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Most used Cyber Tools</span>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="nmaplogo.png" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Nmap </h3>
+          <p class="w3-opacity">Information Gathering</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href="nmap.html">View</a></button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="wiresharklogo.png" height="230px" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>Wireshark </h3>
+          <p class="w3-opacity">Sniffing and Spoofing<</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href="wireshark.html">View</a></button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/jtrlogo.png" height="230px" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>John the ripper</h3>
+          <p class="w3-opacity">Password attacking</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href="nmap.html">View</a></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="w3-center w3-padding-64" id="contact">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
+  </div>
+
+  <form class="w3-container" action="/action_page.php" target="_blank">
+    <div class="w3-section">
+      <label>Name</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
+    </div>
+    <div class="w3-section">
+      <label>Email</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
+    </div>
+    <div class="w3-section">
+      <label>Subject</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
+    </div>
+    <div class="w3-section">
+      <label>Message</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
+    </div>
+    <button type="submit" class="w3-button w3-block w3-black">Send</button>
+  </form>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  <h4>All articles are copyrighted and cannot be reproduced without permission</h4>
+  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Bluehawk<a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green"></a></p>
+</footer>
+
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+</body>
+</html>

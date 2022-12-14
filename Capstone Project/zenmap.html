@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenmap</title>
+    <style>
+        body{
+            padding: 20px;
+            margin: 20px;
+            font-size: larger;
+        }
+    .command{
+        background-color: rgb(175, 173, 176);
+        width: 400px;
+        height: 30px;
+    }
+</style>
+</head>
+<body>
+    <div class="heading"><h1 align="center">How to use Zenmap to Scan a network</h1></div>
+    <div class="matter">Zenmap is a GUI (Graphical User Interface) the most popular network scanner called Nmap (Network Mapper). Zenmap usage is the same for all Linux systems the installation procedure is based on Debian and based Linux distributions.To being install Zenmap through the following command execution:</div>
+    <div class="command"><p># apt install zenmap -y</p></div>
+    <br>
+    <img src="zenmap1.png">
+    <p>Once installed you’ll find Zenmap on the apps menu, depending on the scan type you want to carry out it is recommended to run Zenmap as root, for example, Nmap SYN or raw scans requires special privileges to be executed.</p>
+
+        <p>Alternatively, you can run Zenmap from the console, but since a graphical interface is mandatory to get it installed this tutorial focused on graphical management.</p>
+        <img src="zenmap2.png">
+        <p>Once executed you’ll see Zenmap main window including a drop down menu to select the profile. For the first example select the Regular Scan.</p>
+        <img src="zenmap3.png">
+        <p>On the “Target” box, fill the field with the IP address, domain name, IP range or subnet to scan. Once selected, press on the “Scan” button, next to the drop down menu to select the desired Profile.</p>
+        <img src="zenmap4.png">
+        <p>Below you will see the following tabs: Nmap Output, Ports / Hosts, Topology, Host Details and Scans.
+            Where:</p>
+            <p>Nmap Output: this output shows the regular Nmap output, this is the default screen when running scans.</p>
+            <p>Ports / Hosts: this tab prints services or ports with additional information sorted by hosts, if a single host is selected then it will list the status of scanned ports.</p>
+            <p>Topology: this tab shows the path packets go through until reaching the target, in other words it shows the hops between us and the target similarly to a traceroute (see https://linuxhint.com/traceroute_nmap/) displaying the network structure based on the path.</p>
+
+               <p> Host Details: this tab prints the information on the scanned host as a tree. The information printed in this tab includes the host name and its OS, if its online or down, the status of the scanned ports, the uptime and more. It also display vulnerability estimation based on available services on the target.</p>
+                
+               <p> Scans: this tab shows an history of all executed scans, including running scans, you can also add scans by importing a file.</p>
+               <p>The following screenshot shows the Ports / Hosts tab:</p>
+               <img src="zenmap5.png">
+               <p>As you can see the screenshot above lists all ports, their protocol, their state and service, when available if instructed by the type of scan it will also print the software version running behind each port.</p>
+               <img src="zenmap6.png">
+               <p>The next tab shows the Topology or traceroute:</p>
+               <img src="zenmap7.png">
+               <p>You can check this tab displays the traceroute by running a traceroute against linuxhint.com, of course, despite this is not the case take in consideration traceroute results may variate depending on hops availability.</p>
+               <p>You can check this tab displays the traceroute by running a traceroute against linuxhint.com, of course, despite this is not the case take in consideration traceroute results may variate depending on hops availability.</p>
+               <img src="zenmap8.png">
+               <p>lets check the Quick Scan mode by selecting it in the Profile drop down menu:</p>
+               <p>Once selected press on “Scan”. As you’ll see in the Command field you’ll see the flags -T4 and -F.</p>
+               <p>The -T4 refers to the timing template. Timing templates are:</p>
+               <p><ul><li>Paranoid: -T0, extremely slow, useful to bypass IDS (Intrusion Detection Systems)</li>
+                      <li>Sneaky: -T1, very slow, also useful to bypass IDS (Intrusion Detection Systems)</li>
+                      <li>Polite: -T2, neutral.</li>
+                      <li>Normal: -T3, this is the default mode.</li>
+                      <li>Aggressive: -T4, fast scan.</li>
+                      <li>Insane: -T5, faster than Aggressive  scan technique.</li>
+
+
+            </ul></p>
+            <p>The -F flag instructs Zenmap (and Nmap) to carry out a fast scan.</p>
+            <img src="zenmap9.png">
+            <p>As you can see above, the result is shorter than the Regular scan, fewer ports were scanned and the result was ready after 2.75 seconds.
+
+            </p>
+            <img src="zenmap10.png">
+            <p>For the following example, on the Profile field select the intense scan, this time we will focus on the output.
+
+                When selecting this type of scan you’ll notice, additionally to the -T4 flag the -A flag.
+                The -A flag enables OS and version detection, script scanning and traceroute.
+                The -v flag increases the verbosity of the output</p>
+                <img src="zenmap11.png">
+
+
+
+</body>
+</html>

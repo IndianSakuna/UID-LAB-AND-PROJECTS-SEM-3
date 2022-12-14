@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      
+        * {
+            
+          box-sizing: border-box;
+        }
+        
+        body {
+          padding: 20px;
+          margin:20px;
+          background-color:  rgb(200, 238, 212);
+          background-image: url("back.jpg");
+          background-size: cover;
+          font-size: large;
+        }
+        
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        .dropdown {
+          float: left;
+          overflow: hidden;
+        }
+        
+        .dropdown .dropbtn {
+          font-size: 16px;  
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: inherit;
+          font: inherit;
+          margin: 0;
+        }
+        
+        .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: rgb(163, 212, 179);
+          color:black;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: rgb(163, 212, 179);
+          width: 100%;
+          left: 0;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content .header {
+          background: rgb(3, 3, 3);
+          padding: 16px;
+          color: white;
+        }
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        
+        /* Create three equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+          background-color:rgb(163, 212, 179);
+          height: 250px;
+        }
+        
+        .column a {
+          float: none;
+          color: black;
+          padding: 16px;
+          display:block;
+          text-align:left;
+        }
+        
+        .column a:hover {
+          background-color: rgb(254, 254, 254);
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .column {
+            width: 100%;
+            height: auto;
+          }
+        }
+        </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="newindex.html">Home</a>
+        <a href="attacks.html">Attacks</a>
+        <a href="awareness.html">Cyber Awareness</a>
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <div class="header">
+              <h2>Pentesting Tools</h2>
+            </div>   
+            <div class="row">
+              <div class="column">
+                  <h3>Most used tools</h3>
+                  <a href="nmap.html">Nmap</a>
+                  <a href="#">Bettercap</a>
+                  <a href="wireshark.html">Wireshark</a>
+                </div>
+              <div class="column">
+                <h3>Information Gathering</h3>
+                <a href="nmap.html">Nmap</a>
+                <a href="zenmap.html">Zenmap</a>
+                <a href="wireshark.html">Wireshark</a>
+              </div>
+              <div class="column">
+                <h3>Sniffing and Spoofing</h3>
+                <a href="#">Bettercap</a>
+                <a href="#">Colasoft</a>
+                <a href="#">Mitm Proxy</a>
+              </div>
+              <div class="column">
+                <h3>Password attacks</h3>
+                <a href="#">Hash cat</a>
+                <a href="#">John the ripper</a>
+                <a href="#">Hydra</a>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <a href="https://thehackernews.com/2022/10/indian-energy-company-tata-powers-it.html">Cyber News</a>
+        <a href="login.html">Sign in/Login</a>
+        <a href="contact.html">Contact Us</a>
+        </div>
+    <div class="head">
+        <h1 align="center"> Top 10 Secure Computing Tips</h1>
+    </div>
+    <div class="sub">
+        <h2> Tip #1 - You are a target to hackers </h2>
+    </div>
+    <p>Don't ever say, "It won't happen to me." We are all at risk and the stakes are high - both for your personal and financial well-being  and for the university's standing and reputation.
+        <ul>
+            <li>Cybersecurity is everyone's responsibility.</li>
+            <li>By following the tips below and remaining vigilant, you are doing your part to protect yourself and others.</li>
+        </ul>
+    </p>
+    <div class="sub">
+        <h2>Tip #2 - Keep software up-to-date </h2>
+    </div>
+    <p>Installing software updates for your operating system and programs is critical. Always install the latest security updates for your devices:
+        <ul>
+            <li>Turn on Automatic Updates for your operating system.</li>
+            <li>Use web browsers such as Chrome or Firefox that receive frequent, automatic security updates.</li>
+            <li>Make sure to keep browser plug-ins (Flash, Java, etc.) up-to-date.</li>
+        </ul>
+        <img src="soft.png" width="500px" style="position:relative; left:400px;" > 
+    </p>
+    <div class="sub">
+        <h2>Tip #3 - Avoid Phishing scams - beware of suspicious emails and phone calls</h2></div>
+        <p>Phishing scams are a constant threat - using various social engineering(link is external) ploys, cyber-criminals will attempt to trick you into divulging personal information such as your login ID and password, banking or credit card information.
+        <ul>
+            <li>Phishing scams can be carried out by phone, text, or through social networking sites - but most commonly by email.</li>
+            <li>Be suspicious of any official-looking email message or phone call that asks for personal or financial information.</li>
+        </ul>
+        
+    </p>
+    <div class="sub">
+        <h2>Tip #4 - Practice good password management</h2></div>
+        <p>We all have too many passwords to manage - and it's easy to take short-cuts, like reusing the same password.  A password manager can help you to maintain strong unique passwords for all of your accounts.  These programs can generate strong passwords for you, enter credentials automatically, and remind you to update your passwords periodically. UC Berkeley offers free LastPass Premium(link is external) to all users with a CalNet ID.
+          <img src="pass.png" width="500px" style="position:relative; left:0px;" > 
+        </p>
+        <div class="sub">
+            <h2>Tip #5 -  Be careful what you click</h2></div>
+            <p>Avoid visiting unknown websites or downloading software from untrusted sources. These sites often host malware that will automatically install (often silently) and compromise your computer.
+
+                If attachments or links in the email are unexpected or suspicious for any reason, don't click on it.
+                
+                ISO recommends using Click-to-Play(link is external) or NoScript(link is external), browser add-on features that prevent the automatic download of plug-in content (e.g., Java, Flash) and scripts that can harbor malicious code.</p>
+                <div class="sub">
+                    <h2>Tip #6 - Never leave devices unattended</h2></div>
+                    <p>The physical security of your devices is just as important as their technical security. 
+                    <ul>
+                        <li>If you need to leave your laptop, phone, or tablet for any length of time - lock it up so no one else can use it. </li>
+                        <li>If you keep protected data on a flash drive or external hard drive, make sure their encrypted and locked up as well. </li>
+                        <li>For desktop computers, lock your screen or shut-down the system when not in use.</li>
+
+                    </ul></p>
+                    <div class="sub">
+                        <h2>Tip #7 - Safeguard Protected Data</h2></div>
+                        <p>Be aware of Protected Data that you come into contact with and its associated restrictions. Review the UCB Data Classification Standard to understand data protection level requirements. In general:
+                            <ul>
+                                <li>
+                                    Keep high-level Protected Data (e.g., SSN's, credit card information, student records, health information, etc.) off of your workstation, laptop, or mobile devices.
+                                </li>
+                                <li> Securely remove sensitive data files from your system when they are no longer needed.</li>
+                                <li>Always use encryption when storing or transmitting sensitive data.
+
+                                </li>
+                            </ul>
+                            <img src="datapro.png" width="500px" style="position:relative; left:400px;" >
+                        </p>
+                        <div class="sub">
+                            <h2>Tip #8 - Use mobile devices safely</h2></div>
+                            <p>
+                                Considering how much we rely on our mobile devices and how susceptible they are to attack, you'll want to make sure you are protected:
+                            <ul>
+                                <li>
+                                    Lock your device with a PIN or password - and never leave it unprotected in public. </li>
+                                    <li>Only install apps from trusted sources (Apple AppStore, Google Play).</li>
+                                    <li>Keep the device's operating system up-to-date.</li>
+                                    <li>Don't click on links or attachments from unsolicited emails or texts.</li>
+                                    <li>Avoid transmitting or storing personal information on the device.</li>
+                                    <li>Most handheld devices are capable of employing data encryption - consult your device's documentation for available options.</li>
+                                    <li>Use Apple's Find my iPhone(link is external) or the Android Device Manager(link is external) tools to help prevent loss or theft.</li>
+
+                            </ul></p>
+                            <div class="sub">
+                                <h2>Tip #9 - Install antivirus/anti-malware protection</h2></div>
+                                <p>Only install these programs from a known and trusted source. Keep virus definitions, engines and software up-to-date to ensure your programs remains effective.<img src="antivirus.png" width="500px" style="position:relative; left:400px;"></p>
+                                
+                                <div class="sub">
+                                    <h2>Tip #10 - Back up your data</h2></div>
+                                    <p>Back up regularly - if you are a victim of a security incident, the only guaranteed way to repair your computer is to erase and re-install the system.</p>
+
+    </div>
+    <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</body>
+</html>

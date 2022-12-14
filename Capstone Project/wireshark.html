@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireshark</title>
+    <style>
+        body{
+            padding: 20px;
+            margin: 20px;
+            font-size: larger;
+        }
+    .command{
+        background-color: rgb(175, 173, 176);
+        width: 400px;
+        height: 30px;
+    }
+</style>
+</head>
+<body>
+    <div class="heading"><h1>What is Wireshark?</h1></div>
+    <p>Wireshark is an open-source packet analyzer, which is used for education, analysis, software development, communication protocol development, and network troubleshooting.</p>
+    <p>It is used to track the packets so that each one is filtered to meet our specific needs. It is commonly called as a sniffer, network protocol analyzer, and network analyzer. It is also used by network security engineers to examine security problems.</p>
+    <p>Wireshark is a free to use application which is used to apprehend the data back and forth. It is often called as a free packet sniffer computer application. It puts the network card into an unselective mode, i.e., to accept all the packets which it receives.</p>
+    <div class="sub"><h1>Uses of Wireshark:</h1></div>
+    <p>Wireshark can be used in the following ways:
+        <ol>
+            <li>It is used by network security engineers to examine security problems.</li>
+            <li>It allows the users to watch all the traffic being passed over the network.</li>
+            <li>It is used by network engineers to troubleshoot network issues.</li>
+            <li>It also helps to troubleshoot latency issues and malicious activities on your network.</li>
+            <li>It can also analyze dropped packets.</li>
+            <li>It helps us to know how all the devices like laptop, mobile phones, desktop, switch, routers, etc., communicate in a local network or the rest of the world.</li>
+
+        </ol>
+    </p>
+    <div class="sub"><h1>What is a packet?
+    </h1></div>
+    <p>A  packet is a unit of data which is transmitted over a network between the origin and the destination. Network packets are small, i.e., maximum 1.5 Kilobytes for Ethernet packets and 64 Kilobytes for IP packets. The data packets in the Wireshark can be viewed online and can be analyzed offline.</p>
+    <div class="sub"><h1>History of Wireshark:
+    </h1></div>
+    <p>In the late 1990's Gerald Combs, a computer science graduate of the University of Missouri-Kansas City was working for the small ISP (Internet Service Provider). The protocol at that time did not complete the primary requirements. So, he started writing ethereal and released the first version around 1998. The Network integration services owned the Ethernet trademark.</p>
+    <p>Combos still held the copyright on most of the ethereal source code, and the rest of the source code was re-distributed under the GNU GPL. He did not own the Ethereal trademark, so he changed the name to Wireshark. He used the contents of the ethereal as the basis.</p>
+    <p>Wireshark has won several industry rewards over the years including eWeek, InfoWorld, PC Magazine and also as a top-rated packet sniffer. Combos continued the work and released the new version of the software. There are around 600 contributed authors for the Wireshark product website.</p>
+    <div class="sub"><h1>Functionality of Wireshark:</h1></div>
+    <p>Wireshark is similar to tcpdump in networking. Tcpdump is a common packet analyzer which allows the user to display other packets and TCP/IP packets, being transmitted and received over a network attached to the computer. It has a graphic end and some sorting and filtering functions. Wireshark users can see all the traffic passing through the network.</p>
+    <p>Wireshark can also monitor the unicast traffic which is not sent to the network's MAC address interface. But, the switch does not pass all the traffic to the port. Hence, the promiscuous mode is not sufficient to see all the traffic. The various network taps or port mirroring is used to extend capture at any point.</p>
+    <p>Port mirroring is a method to monitor network traffic. When it is enabled, the switch sends the copies of all the network packets present at one port to another port.</p>
+    <img src="wireshark1.png">
+    <p>The Wireshark software window is shown above, and all the processes on the network are carried within this screen only.</p>
+    <p>The options given on the list are the Interface list options. The number of interface options will be present. Selection of any option will determine all the traffic. For example, from the above fig. select the Wi-Fi option. After this, a new window opens up, which will show all the current traffic on the network. Below is the image which tells us about the live capture of packets and our Wireshark will look like:</p>
+    <img src="wireshark2.png">
+    <p>The above arrow shows the packet content written in hexadecimal or the ASCII format. And the information above the packet content, are the details of the packet header.It will continue listening to all the data packets, and you will get much data. If you want to see a particular data, then you can click on the red button. The traffic will be stationary, and you can note the parameters like time, source.</p>
+    <img src="wireshark3.png">
+    <p>You can also select the connection to which your computer is connected. For example, in this PC, we have chosen the current network, i.e., the ETHERNET.
+
+        After connecting, you can watch the traffic below:</p>
+        <img src="wireshark4.png">
+        <p>There is a filter block below the menu bar, from where a large amount of data can be filtered. For example, if we apply a filter for HTTP, only the interfaces with the HTTP will be listed.</p>
+        <img src="wireshark5.png">
+        <div class="sub"><h1>Most used Filters in Wireshark</h1></div>
+        <p>Whenever we type any commands in the filter command box, it turns green if your command is correct. It turns red if it is incorrect or the Wireshark does not recognize your command.</p>
+        <img src="wireshark6.png">
+        <div class="sub"><h1>Wireshark packet sniffing</h1></div>
+        <p>Wireshark is a packet sniffing program that administrators can use to isolate and troubleshoot problems on the network. It can also be used to capture sensitive data like usernames and passwords. It can also be used in wrong way (hacking) to ease drop.</p>
+        <p>Packet sniffing is defined as the process to capture the packets of data flowing across a computer network. The Packet sniffer is a device or software used for the process of sniffing.</p>
+        <img src="wireshark7.png">
+        <p>Apply the filter by the name 'http.' After the filter is applied, the screen will look as:</p>
+        <img src="wireshark8.png">
+        <div class="sub"><h1>Username and password sniffing</h1></div>
+        <p>It is the process used to know the passwords and username for the particular website. Let's take an example of gmail.com. Below are the steps:</p>
+        <ul><li>Open the Wireshark and select the suitable interface.</li>
+        <li>
+            Open the browser and enter the web address. Here, we have entered gmail.com, which is highly secured. Enter your email address and the password.
+        </li>
+        <img src="wireshark9.png">
+
+<li>Now, go to the Wireshark and on the filters block, enter 'frame contains gmail.com.' Then you can see some traffic.</li>
+    </ul>
+<img src="wireshark10.png">
+<li>Right-click on the particular network and select 'Follow', and then 'TCP Stream.' You can see that all the data is secured in the encrypted form.</li>
+<img src="wireshark11.png">
+<p>In the arrow shown above, the 'show and save data as' has many choices. These options are- ASCII, C Arrays, EBCDIC (Extended Binary Coded Decimal Interchange Code), etc. EBCDIC is used in mainframe and mid-range IBM computer operating systems.</p>
+</body>
+</html>
